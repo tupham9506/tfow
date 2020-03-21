@@ -1,0 +1,27 @@
+<v-row>
+  <v-col cols="12">
+    <v-expansion-panels>
+        <v-expansion-panel
+          v-for="(item, index) in columnList"
+          :key="`column-${index}`"
+        >
+          <v-expansion-panel-header>
+            <div>
+              {{ item.name }}
+              <v-badge class="ml-1" :content="`${item.card_list.length}${item.card_list.length >= 100 ? '+' : ''}`"></v-badge>
+            </div>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <v-card v-for="(cardItem, cardIndex) in item.card_list" :key="`card-${cardIndex}`" class="mb-1" @click="selectCard(cardItem)" >
+              <v-card-title>
+                <div class="text-truncate" v-if="cardItem.issue">
+                  #{{ cardItem.issue.number }} {{ cardItem.issue.title }}
+                </div>
+                <div v-if="!cardItem.issue">Issue not found!</div>
+              </v-card-title>
+            </v-card>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+  </v-col>
+</v-row>

@@ -1,0 +1,15 @@
+<v-card>
+  <v-card-title class="amber lighten-1">
+    Chuyển sang In progess
+  </v-card-title>
+  <v-container>
+    <v-row>
+      <v-col cols="12">
+        <v-chip>Hiện tại: {{ currentColumn.name }}</v-chip>
+        <v-btn small color="primary" @click="changeColumn">
+          {{ nextColumn.name }}
+        </v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
+</v-card>

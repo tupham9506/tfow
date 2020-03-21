@@ -1,0 +1,10 @@
+<v-container fluid>
+  <v-row>
+    <v-col cols="4">
+      <sidebar @select-card="selectCard"/>
+    </v-col>
+    <v-col cols="8">
+      <issue :issue="issue"/>
+    </v-col>
+  </v-row>
+</v-container>

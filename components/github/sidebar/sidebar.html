@@ -1,0 +1,32 @@
+<div>
+  <v-row>
+    <v-col cols="6">
+      <v-select
+        :items="repoList"
+        item-text="name"
+        item-value="full_name"
+        label="Repositories"
+        @change="onSelectRepo"
+        solo
+        v-if="repoList"
+      ></v-select>
+    </v-col>
+    <v-col cols="6">
+      <v-select
+        v-if="projectList"
+        :items="projectList"
+        item-text="name"
+        item-value="id"
+        label="Projects"
+        @change="getColumnList"
+        solo
+      ></v-select>
+    </v-col>
+  </v-row>
+  <v-row>
+    <v-col cols="12">
+      <board :column-list="columnList" @select-card="selectCard"/>
+    </v-col>
+  </v-row>
+</div>
+

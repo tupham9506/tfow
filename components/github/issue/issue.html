@@ -1,0 +1,106 @@
+<v-col v-if="issue">
+  <draggable>
+    <div v-for="(item, index) in flow.nodes" :key="`flow-${index}`">
+      <component :is="item.component" :data="issue" :node="item"/>
+    </div>
+    <!-- <div color="amber lighten-1 mb-2">
+       <v-card>
+          <v-card-title class="amber lighten-1">
+            Đọc nội dung issue
+          </v-card-title>
+          <v-container>
+            <v-row>
+              <v-col cols="12" md="10">
+                {{issue.html_url}}
+              </v-col>
+            </v-row>
+          </v-container>
+       </v-card>
+    </div>
+    <div color="amber lighten-1 mb-2">
+      <change-status :issue="issue"/>
+    </div>
+    <div color="amber lighten-1 mb-2">
+      <v-card>
+        <v-card-title class="amber lighten-1">
+          Tạo branch
+        </v-card-title>
+          <v-container>
+            <v-row>
+              <v-col cols="12" md="10">
+                <div>Branch: {{
+                  issue.title
+                    .replace(/\[Bug/g, 'fix-bug')
+                    .replace(/\[/g, '')
+                    .replace(/\]/g, '/'+ issue.number)
+                    .replace(/ /g, '-').toLowerCase()
+                  }}</div>
+              </v-col>
+            </v-row>
+          </v-container>
+      </v-card>
+    </div>
+    <div color="amber lighten-1 mb-2">
+       <v-card>
+          <v-card-title class="amber lighten-1">
+            Pull request title
+          </v-card-title>
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <div>
+                  #{{ issue.number }}
+                  {{
+                    issue.title
+                      .toLowerCase()
+                      .replace(/\[bug/g, '')
+                      .replace(/\[enhancement/g, '')
+                      .replace(/\[/g, '')
+                      .replace(/\]/g, '')
+                      .replace(/(^.)/, m => m.toUpperCase())
+                  }}
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+       </v-card>
+    </div>
+    <div color="amber lighten-1 mb-2">
+      <v-card>
+        <v-card-title class="amber lighten-1">
+          Test pattern
+        </v-card-title>
+          <v-container>
+            <v-row>
+              <v-col cols="12" md="10">
+                <v-textarea auto-grow value='
+                  ### Test pattern
+                  - [ ]
+                  - [ ]
+                  - [ ]
+                  ### Evidence
+                  <a href="">Click here</a>
+                  ### Pull request
+                  #'>
+                </v-textarea>
+              </v-col>
+            </v-row>
+          </v-container>
+      </v-card>
+    </div>
+    <div color="amber lighten-1 mb-2">
+      <v-card>
+        <v-card-title class="amber lighten-1">
+          Generate video name
+        </v-card-title>
+          <v-container>
+            <v-row>
+              <v-col cols="12" md="10">
+                2020-{{ issue.number }}-{{new Date().getHours()}}{{new Date().getMinutes()}}
+              </v-col>
+            </v-row>
+          </v-container>
+      </v-card>
+    </div> -->
+  </draggable>
+</v-col>
