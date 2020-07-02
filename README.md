@@ -1,6 +1,6 @@
 # tflow
 
-> My exquisite Nuxt.js project
+Flow làm việc với github. Đăng nhập github để tạo ra các flow làm việc của bạn
 
 ## Build Setup
 
